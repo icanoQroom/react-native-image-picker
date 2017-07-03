@@ -46,6 +46,7 @@ import java.io.OutputStream;
 import java.lang.ref.WeakReference;
 
 import com.facebook.react.modules.core.PermissionListener;
+import com.facebook.react.modules.core.PermissionAwareActivity;
 
 import static com.imagepicker.utils.MediaUtils.*;
 import static com.imagepicker.utils.MediaUtils.createNewFile;

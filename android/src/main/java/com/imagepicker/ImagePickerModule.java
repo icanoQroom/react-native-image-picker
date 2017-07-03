@@ -580,16 +580,15 @@ public class ImagePickerModule extends ReactContextBaseJavaModule
         {
           ((ReactActivity) activity).requestPermissions(PERMISSIONS, requestCode, listener);
         }
-        else if (activity instanceof OnImagePickerPermissionsCallback)
+        else if (activity instanceof PermissionAwareActivity)
         {
-          ((OnImagePickerPermissionsCallback) activity).setPermissionListener(listener);
-          ActivityCompat.requestPermissions(activity, PERMISSIONS, requestCode);
+          ((PermissionAwareActivity) activity).requestPermissions(PERMISSIONS, requestCode, listener);
         }
         else
         {
           final String errorDescription = new StringBuilder(activity.getClass().getSimpleName())
                   .append(" must implement ")
-                  .append(OnImagePickerPermissionsCallback.class.getSimpleName())
+                  .append(PermissionAwareActivity.class.getSimpleName())
                   .toString();
           throw new UnsupportedOperationException(errorDescription);
         }
